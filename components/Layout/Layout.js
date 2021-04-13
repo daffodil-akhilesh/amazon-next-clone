@@ -1,10 +1,10 @@
 import Head from "next/head";
 import constants from "../../constants";
-import classes from './Layout.module.css';
+import classes from "./Layout.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className={classes.Layout}>  
+    <div className={classes.Layout}>
       <Head>
         <link rel="icon" href="amazon.ico" />
         <title>{constants.HOME_TITLE}</title>
