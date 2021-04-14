@@ -1,0 +1,36 @@
+.DoubleText {
+  padding: 10px 10px 10px 0px;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  padding-left: 5px;
+  height: 50px;
+}
+.DoubleText:hover{
+    border:1px solid white;
+    border-radius: 2px;
+}
+.DoubleTextIcon{
+    width:fit-content;
+    margin-top: 14px;
+    margin-right:4px;
+}
+.DoubleTextContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.First {
+  height: 14px;
+}
+.First p {
+  color: #ccc;
+  font-size: 12px;
+  text-align: left;
+}
+.Second {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 14px;
+}

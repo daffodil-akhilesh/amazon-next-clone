@@ -1,0 +1,22 @@
+.SelectCountry{
+    width:60px;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;   
+    border:none;
+}
+.SelectCountry button{
+    background:none;
+    border:none;
+    display: flex;
+    align-items: center;
+}
+.CountryFlag{
+    margin-right: 8px;
+}
+.SelectCountry button:hover{
+    border:1px solid white;
+    border-radius:2px;
+}
+
+

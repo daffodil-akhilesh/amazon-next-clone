@@ -1,0 +1,33 @@
+.NavBar {
+  display: flex;
+  background-color: #232f3e;
+  height: 39px;
+  align-items: center;
+  color: #fff;
+}
+
+.NavBarCenter{
+    display: flex;
+}
+.NavBarLeft{
+    margin-left:10px;
+    padding:2px 3px;
+    display: flex;
+    margin-right: 10px;
+}
+
+.NavBarLeft span{
+    margin-left: 5px;
+}
+
+.NavBarLeft:hover{
+    border: 1px solid white;
+    border-radius: 2px;      
+}
+.NavBarRight{
+    margin-left:auto;
+}
+.NavBarRight:hover{
+    border: 1px solid white;
+    border-radius: 2px;
+}
