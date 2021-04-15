@@ -13,7 +13,7 @@ const SelectCountry = ({}) => {
     <div className={classes.SelectCountry}>
       <button>
         <div className={classes.CountryFlag}>
-          <Image src={country["us"]} width={40} height={40} doStyle={false} />
+          <Image src={country["us"]} width={40} height={40}/>
         </div>
         <div>
           <FontAwesomeIcon icon={faSortDown} color="white" />

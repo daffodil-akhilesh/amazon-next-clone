@@ -2,10 +2,10 @@ import "../styles/globalStyles.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Provider } from "react-redux";
 import { useStore } from "../redux/store";
+import { AppProps } from 'next/app';
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }:AppProps) {
   let store = useStore(pageProps.initialReduxState);
-  console.log(process.env.NEXT_PUBLIC_ENV);
   return (
     <Provider store={store}>
       <Component {...pageProps} />

@@ -13,7 +13,7 @@ const TopBar = ({}) => {
   });
   return (
     <div className={classes.TopBar}>
-      <Logo src="/amazonStr.png" link="/" isText text=".in" doStyle />
+      <Logo src="/amazonStr.png" link="/" isText text=".in" doStyle userDetails={null} width={null} height={null}/>
       <DoubleText
         isIcon
         iType="locArrow"
@@ -26,8 +26,9 @@ const TopBar = ({}) => {
         isIcon={false}
         text1={`Hello ${userDetails.first_name}`}
         text2={"Accounts & Lists"}
+        iType={null}
       />
-      <DoubleText isIcon={false} text1={"Returns"} text2={"& Orders"} />
+      <DoubleText isIcon={false} text1={"Returns"} text2={"& Orders"} iType={null}/>
       <Logo
         src={"/cart.png"}
         isText={false}
@@ -35,6 +36,8 @@ const TopBar = ({}) => {
         width={32}
         height={32}
         userDetails={userDetails}
+        doStyle={false}
+        text={null}
       />
     </div>
   );

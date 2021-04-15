@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/Header/NavBar/NavBar.js", "components/Grid/Grid.js"  ],
+, "components/Header/NavBar/NavBar.tsx", "components/Grid/Grid.tsx"  ],
   "exclude": [
     "node_modules"
   ]

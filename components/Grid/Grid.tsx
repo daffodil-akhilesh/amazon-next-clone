@@ -12,9 +12,9 @@ const Grid = () => {
   return (
     <div className={classes.Grid}>
       <Carousel showThumbs={false} showIndicators={false}>
-        {Banners.map((banner) => {
+        {Banners.map((banner,index) => {
           return (
-            <div>
+            <div key={index}>
               <img src={banner.link} />
             </div>
           );

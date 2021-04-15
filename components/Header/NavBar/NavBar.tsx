@@ -13,8 +13,8 @@ const NavBar = ({}) => {
           <span> All </span>
       </div>
       <div className={classes.NavBarCenter}>
-        {links.map((link) => {
-          return <NavBarItem navTitle={link.title} navLink={link.link} />;
+        {links.map((link,index) => {
+          return <NavBarItem navTitle={link.title} navLink={link.link} key={index}/>;
         })}
       </div>
       <div className={classes.NavBarRight}>

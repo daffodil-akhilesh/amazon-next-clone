@@ -1,5 +1,5 @@
 import Image from "next/image";
-import classes from "./ProfileImg";
+import classes from "./ProfileImg.module.css";
 
 const ProfileImg = ({ userImg, width, height }) => {
   return (
