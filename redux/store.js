@@ -7,7 +7,7 @@ let store;
 
 const rootReducer = combineReducers({});
 const composeEnhancers =
-  process.env.ENV === "development"
+  process.env.NEXT_PUBLIC_ENV === "development"
     ? composeWithDevTools
     : compose;
 
