@@ -3,11 +3,11 @@ export const GET_USER_DETAILS = "amazon/userDetails/GET_USER_DETAILS";
 
 // initial state
 const initialState = {
-  first_name: "Akhilesh",
-  last_name: "Pandey",
-  user_id: "0",
-  location: "New Delhi 110075",
-  itemsCount: "4",
+  firstName: undefined,
+  lastName: undefined,
+  userId: undefined,
+  location: undefined,
+  itemsCount: "0",
 };
 
 // Action Map

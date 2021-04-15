@@ -15,20 +15,22 @@ const TopBar = ({}) => {
     <div className={classes.TopBar}>
       <Logo src="/amazonStr.png" link="/" isText text=".in" doStyle userDetails={null} width={null} height={null}/>
       <DoubleText
+        hasHover={false}
         isIcon
         iType="locArrow"
-        text1={`Deliver To ${userDetails.first_name}`}
-        text2={`${userDetails.location}`}
+        text1={`Deliver To ${userDetails.firstName ?? ""}`}
+        text2={`${userDetails.location ?? "India"}`}
       />
       <SearchBar />
-      <SelectCountry />
+      <SelectCountry hasHover/>
       <DoubleText
+        hasHover
         isIcon={false}
-        text1={`Hello ${userDetails.first_name}`}
+        text1={`Hello ${userDetails.firstName ?? "Sign In"}`}
         text2={"Accounts & Lists"}
         iType={null}
       />
-      <DoubleText isIcon={false} text1={"Returns"} text2={"& Orders"} iType={null}/>
+      <DoubleText hasHover={false} isIcon={false} text1={"Returns"} text2={"& Orders"} iType={null}/>
       <Logo
         src={"/cart.png"}
         isText={false}

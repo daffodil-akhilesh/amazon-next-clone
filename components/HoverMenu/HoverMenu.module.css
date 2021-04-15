@@ -1,0 +1,24 @@
+.HoverMenu {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  padding: 10px 10px;
+  background-color: white;
+  top: 61px;
+}
+.HoverMenuContent{
+    width:100%;
+    height:100%;
+}
+.DisplayFlexColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.DisplayFlexRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
