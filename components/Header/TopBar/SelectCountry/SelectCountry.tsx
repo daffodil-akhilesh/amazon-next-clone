@@ -30,7 +30,7 @@ const SelectCountry = ({hasHover}) => {
         type:HIDE_HOVER_MENU,
         parent:"SelectCountry"
       });
-    },3000)
+    },1000)
   }
 
   return (

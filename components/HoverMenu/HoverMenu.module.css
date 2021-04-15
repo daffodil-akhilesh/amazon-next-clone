@@ -5,6 +5,9 @@
   background-color: white;
   top: 61px;
 }
+.HoverMenu hr{
+    opacity: 0.67;
+}
 .HoverMenuContent{
     width:100%;
     height:100%;

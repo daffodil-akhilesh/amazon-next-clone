@@ -1,0 +1,16 @@
+.HoverMenuPage{
+    height:200px;
+    width:120px;
+    padding-left: 10px;
+}
+.HoverMenuPage h2{
+    font-size: 16px;
+}
+.HoverMenuPage a{
+    text-decoration: none;
+    font-size: 13px;
+    color:#333;
+}
+.HoverMenuPage a:hover{
+    text-decoration: underline;
+}
