@@ -25,10 +25,12 @@ const SelectCountry = ({hasHover}) => {
     });
   }
   const onBlur = ()=>{
-    dispatch({
-      type:HIDE_HOVER_MENU,
-      parent:"SelectCountry"
-    });
+    setTimeout(()=>{
+      dispatch({
+        type:HIDE_HOVER_MENU,
+        parent:"SelectCountry"
+      });
+    },3000)
   }
 
   return (
@@ -43,7 +45,7 @@ const SelectCountry = ({hasHover}) => {
       </button>
       {
         hasHover && show["SelectCountry"] && (
-          <HoverMenu/>
+          <HoverMenu type={"SelectCountry"}/>
         )
       }
     </div>

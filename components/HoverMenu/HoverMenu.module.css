@@ -1,7 +1,6 @@
 .HoverMenu {
   position: absolute;
-  width: max-content;
-  height: max-content;
+  width: fit-content;
   padding: 10px 10px;
   background-color: white;
   top: 61px;
