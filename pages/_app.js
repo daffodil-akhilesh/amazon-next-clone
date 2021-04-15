@@ -5,6 +5,7 @@ import { useStore } from "../redux/store";
 
 export default function MyApp({ Component, pageProps }) {
   let store = useStore(pageProps.initialReduxState);
+  console.log(process.env.ENV);
   return (
     <Provider store={store}>
       <Component {...pageProps} />

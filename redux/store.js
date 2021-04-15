@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
+import { composeWithDevTools} from 'redux-devtools-extension';
 import { useMemo } from "react";
 import thunk from "redux-thunk";
 
@@ -7,7 +8,7 @@ let store;
 const rootReducer = combineReducers({});
 const composeEnhancers =
   process.env.ENV === "development"
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? composeWithDevTools
     : compose;
 
 const logger = (store) => (next) => (action) => {
