@@ -67,7 +67,7 @@ const HoverMenu = ({ type }) => {
                 type === "DoubleTextAcc" && (
                     <div>
                         {
-                            !userDetails.userToken && <HoverMenuButton link={"/auth/signUp"} text={"Sign In"} onClick={onClick} />
+                            <HoverMenuButton showPara={!userDetails.userToken} link={"/auth/signUp"} text={!userDetails.userToken ? "Sign In" : "Log Out"} onClick={!userDetails.userToken ? onClick : null} />
                         }
                         <hr />
                         <div className={[classes.HoverMenuContent, classes.DisplayFlexRow].join(" ")}>
