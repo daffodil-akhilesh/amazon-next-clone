@@ -17,7 +17,7 @@ const LoginPage = ({ type }) => {
             setMode("pass");
             return;
         }
-        // login request
+        // login request or SignUp Request
         console.log(email, password);
     }
 
@@ -35,7 +35,7 @@ const LoginPage = ({ type }) => {
 
     return (
         <div className={classes.LoginPage}>
-            <LoginPostCard width={350} height={"80%"} imagePath={"/amazon_black.png"} imgH={40} imgW={"90%"}>
+            <LoginPostCard width={350} height={"80%"} imagePath={"/amazon_black.png"} imgHref={"/"} imgH={40} imgW={"90%"}>
                 <div className={classes.LoginPageContent}>
                     <div>
                         <h1>{type === "login" ? "Sign-In" : "Create Account"}</h1>

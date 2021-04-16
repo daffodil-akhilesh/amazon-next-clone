@@ -3,3 +3,10 @@
   z-index: 2;
   top: 60px;
 }
+.ProfileContainer{
+  position: absolute;
+  z-index: 5;
+  top:240px;
+  left:20px;
+  border:#dfdfdf;
+}

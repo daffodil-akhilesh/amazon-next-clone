@@ -1,8 +1,12 @@
 .LoginPostCard{
-    box-shadow:2px 2px 3px 0.5 #eaeaea;
+    box-shadow:4px 4px 20px 1.8 #858282;
     margin:10px auto;
+    background: white;
+    border-radius: 4px;
 }
 .LoginPostCardImage{
     margin: 5px auto;
+    padding-top: 10px;
     text-align: center;
+    cursor: pointer;
 }
