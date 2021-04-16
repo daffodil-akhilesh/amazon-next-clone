@@ -2,6 +2,7 @@ import Layout from "../../components/Layout/Layout";
 import Head from "next/head";
 import constants from "../../constants";
 import { useRouter } from "next/router";
+import LoginPage from "../../components/LoginPage/LoginPage";
 
 const AuthComponent = () => {
   let type = useRouter().query.type;
@@ -15,9 +16,9 @@ const AuthComponent = () => {
         </title>
       </Head>
       <div>
-        <h1>
-          {type == "login" ? constants.LOGIN_TITLE : constants.SIGNUP_TITLE}
-        </h1>
+        {
+          <LoginPage type={type}/>
+        }
       </div>
     </Layout>
   );
