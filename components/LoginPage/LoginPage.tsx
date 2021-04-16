@@ -3,6 +3,8 @@ import classes from "./LoginPage.module.css";
 import LoginPostCard from "./LoginPostCard/LoginPostCard";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import call from '../../api';
+import endpoints from '../../api/apiEndpoints';
 
 
 const LoginPage = ({ type }) => {
@@ -17,8 +19,23 @@ const LoginPage = ({ type }) => {
             setMode("pass");
             return;
         }
-        // login request or SignUp Request
-        console.log(email, password);
+        let data = {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        }
+        call({
+            method: "post",
+            url: type === "login" ? endpoints.LOGIN : endpoints.SIGNUP,
+            data: data,
+            cbSuccess: (response) => {
+                console.log(response.data);
+            },
+            cbError: (error) => {
+                console.log(error);
+            },
+            cbFinally: null
+        });
     }
 
     const inputHandler = (event) => {
@@ -35,7 +52,7 @@ const LoginPage = ({ type }) => {
 
     return (
         <div className={classes.LoginPage}>
-            <LoginPostCard width={350} height={"80%"} imagePath={"/amazon_black.png"} imgHref={"/"} imgH={40} imgW={"90%"}>
+            <LoginPostCard width={"350px"} height={"80%"} imagePath={"/amazon_black.png"} imgHref={"/"} imgH={"40px"} imgW={"90%"}>
                 <div className={classes.LoginPageContent}>
                     <div>
                         <h1>{type === "login" ? "Sign-In" : "Create Account"}</h1>

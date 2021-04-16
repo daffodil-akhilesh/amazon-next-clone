@@ -7,6 +7,7 @@ export interface ProductSliderProps {
     title: string,
     autoplay: boolean
 }
+// change custom Arrows
 
 const ProductSlider: React.FC<ProductSliderProps> = ({ products, title, autoplay }) => {
 
@@ -17,7 +18,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products, title, autoplay
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: autoplay,
-        autoplaySpeed: 2000
+        autoplaySpeed: 2000,
+        pauseOnHover: true
     }
 
     return (
@@ -27,9 +29,9 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products, title, autoplay
             </div>
             <Slider {...settings}>
                 {
-                    products && products.map((product) => {
+                    products && products.map((product, index) => {
                         return (
-                            <div>
+                            <div key={index} >
                                 <ProductCard product={product} />
                             </div>
                         )
