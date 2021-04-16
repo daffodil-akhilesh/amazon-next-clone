@@ -10,3 +10,20 @@
   left:20px;
   border:#dfdfdf;
 }
+
+.ProductsContainer{
+  position: absolute;
+  z-index: 5;
+  top:250px;
+  right:50px;
+  border:#dfdfdf;
+  width:860px;
+  
+}
+.DealProductsContainer{
+  height:350px; 
+  margin-bottom: 30px;
+}
+.SelectedProductsContainer{
+  height:350px; 
+}

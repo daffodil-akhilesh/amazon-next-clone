@@ -1,8 +1,26 @@
 import classes from "./LoginPostCard.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router"
+import React, { PropsWithChildren } from "react";
 
-const LoginPostCard = ({ width, height, children, imagePath, imgH, imgW, imgHref }) => {
+interface LoginPostCardProps extends PropsWithChildren<any> {
+    width: string,
+    height: string,
+    children?: Array<object>,
+    imagePath?: string,
+    imgH: string,
+    imgW: string,
+    imgHref?: string
+}
+
+const defaultProps: LoginPostCardProps = {
+    width: "100%",
+    height: "100%",
+    imgH: "100%",
+    imgW: "100%"
+}
+
+const LoginPostCard: React.FC<LoginPostCardProps> = ({ width, height, children, imagePath, imgH, imgW, imgHref }) => {
     const router = useRouter();
     const goToHome = () => {
         router.replace(imgHref);
@@ -18,5 +36,7 @@ const LoginPostCard = ({ width, height, children, imagePath, imgH, imgW, imgHref
         </div>
     )
 };
+
+LoginPostCard.defaultProps = defaultProps;
 
 export default LoginPostCard;

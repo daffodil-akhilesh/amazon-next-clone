@@ -6,7 +6,7 @@ import { PropsWithChildren } from "react";
 interface Props extends PropsWithChildren<any> {
     width: number,
     height: number,
-    children?: object
+    children?: Array<object>
 }
 const defaultProps: Props = {
     width: 200,
