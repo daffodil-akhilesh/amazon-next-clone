@@ -4,6 +4,7 @@ import HoverMenuLink from "./HoverMenuLink/HoverMenuLink";
 import HoverMenuPage from "./HoverMenuPage/HoverMenuPage";
 import HoverMenuButton from './HoverMenuButton/HoverMenuButtom';
 import { useRouter } from "next/router";
+import { useSelector } from 'react-redux';
 
 let isLoggedIn = false;
 
@@ -46,6 +47,9 @@ let data2 = [
 
 const HoverMenu = ({ type }) => {
     const router = useRouter();
+    const userDetails = useSelector((state) => {
+        return state.userDetails;
+    })
     const onClick = () => {
         router.push("/auth/login");
     }
@@ -63,7 +67,7 @@ const HoverMenu = ({ type }) => {
                 type === "DoubleTextAcc" && (
                     <div>
                         {
-                            !isLoggedIn && <HoverMenuButton link={"/auth/signUp"} text={"Sign In"} onClick={onClick} />
+                            !userDetails.userToken && <HoverMenuButton link={"/auth/signUp"} text={"Sign In"} onClick={onClick} />
                         }
                         <hr />
                         <div className={[classes.HoverMenuContent, classes.DisplayFlexRow].join(" ")}>

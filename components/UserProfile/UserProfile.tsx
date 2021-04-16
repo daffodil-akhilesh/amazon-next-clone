@@ -2,6 +2,7 @@ import classes from "./UserProfile.module.css";
 import LoginPagePostCard from "../LoginPage/LoginPostCard/LoginPostCard";
 import { useSelector, useDispatch } from 'react-redux';
 import { PropsWithChildren } from "react";
+import { getUserName } from "../../utils";
 
 interface Props extends PropsWithChildren<any> {
     width: number,
@@ -14,6 +15,11 @@ const defaultProps: Props = {
 }
 
 const UserProfile: React.FC<Props> = ({ width, height, children }) => {
+    const userDetails = useSelector((state) => {
+        return state.userDetails;
+    })
+
+
     return (
         <div className={classes.UserProfile}>
             <LoginPagePostCard width={width} height={height} imagePath={"/profile.png"} imgH={140} imgW={140} imgHref={"/user/profile"}>
@@ -21,7 +27,7 @@ const UserProfile: React.FC<Props> = ({ width, height, children }) => {
                 <div>
                     <div className={classes.ProfileName}>
                         {"Hi, "}
-                        {"Akhilesh Pandey"}
+                        {userDetails.email ? getUserName(userDetails.email) : "Friend!"}
                     </div>
                     <div style={{ textAlign: "center" }}>
                         <p>{"Customer since 2020"}</p>

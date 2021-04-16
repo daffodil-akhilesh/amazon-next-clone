@@ -4,16 +4,17 @@ import SearchBar from "./SearchBar/SearchBar";
 import classes from "./TopBar.module.css";
 import SelectCountry from "./SelectCountry/SelectCountry";
 import { useDispatch, useSelector } from "react-redux";
+import { getUserName } from "../../../utils";
 
 const isLoggedIn = true;
 
-const TopBar = ({}) => {
+const TopBar = ({ }) => {
   const userDetails = useSelector((state) => {
     return state.userDetails;
   });
   return (
     <div className={classes.TopBar}>
-      <Logo src="/amazonStr.png" link="/" isText text=".in" doStyle userDetails={null} width={null} height={null}/>
+      <Logo src="/amazonStr.png" link="/" isText text=".in" doStyle userDetails={null} width={null} height={null} />
       <DoubleText
         hasHover={false}
         isIcon
@@ -22,15 +23,15 @@ const TopBar = ({}) => {
         text2={`${userDetails.location ?? "India"}`}
       />
       <SearchBar />
-      <SelectCountry hasHover/>
+      <SelectCountry hasHover />
       <DoubleText
         hasHover
         isIcon={false}
-        text1={`Hello ${userDetails.firstName ?? "Sign In"}`}
+        text1={`Hello, ${userDetails.email ? getUserName(userDetails.email) : "Sign In"}`}
         text2={"Accounts & Lists"}
         iType={null}
       />
-      <DoubleText hasHover={false} isIcon={false} text1={"Returns"} text2={"& Orders"} iType={null}/>
+      <DoubleText hasHover={false} isIcon={false} text1={"Returns"} text2={"& Orders"} iType={null} />
       <Logo
         src={"/cart.png"}
         isText={false}

@@ -1,21 +1,35 @@
 // Action Types
-export const GET_USER_DETAILS = "amazon/userDetails/GET_USER_DETAILS";
+export const SET_USER_DETAILS = "amazon/userDetails/SET_USER_DETAILS";
 
 // initial state
 const initialState = {
-  firstName: undefined,
-  lastName: undefined,
+  email: undefined,
+  userToken: undefined,
   userId: undefined,
-  location: undefined,
-  itemsCount: "0",
+  expiresIn: undefined
 };
 
+
+// Action creators
+export const setUserDetails = (data) => {
+  const newData = {
+    email: data.email,
+    userToken: data.idToken,
+    userId: data.localId,
+    expiresIn: data.expiresIn
+  }
+  return {
+    type: SET_USER_DETAILS,
+    payload: newData
+  };
+}
 // Action Map
 
 const getReducer = {
-  [GET_USER_DETAILS]: (state, action) => {
-    return state;
-  },
+  [SET_USER_DETAILS]: (state, action) => {
+    let data = action.payload;
+    return { ...state, ...data }
+  }
 };
 
 // default Reducer

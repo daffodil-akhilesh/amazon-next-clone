@@ -3,8 +3,8 @@ import classes from "./LoginPage.module.css";
 import LoginPostCard from "./LoginPostCard/LoginPostCard";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import call from '../../api';
-import endpoints from '../../api/apiEndpoints';
+import { useSelector, useDispatch } from 'react-redux';
+import { login } from '../../redux/modules/login';
 
 
 const LoginPage = ({ type }) => {
@@ -13,6 +13,8 @@ const LoginPage = ({ type }) => {
     const [password, setPassword] = useState("");
     const [mode, setMode] = useState("email");
     const router = useRouter();
+    const dispatch = useDispatch();
+    const state = useSelector((state) => state);
 
     const loginHandler = () => {
         if (mode === "email") {
@@ -24,18 +26,9 @@ const LoginPage = ({ type }) => {
             password: password,
             returnSecureToken: true
         }
-        call({
-            method: "post",
-            url: type === "login" ? endpoints.LOGIN : endpoints.SIGNUP,
-            data: data,
-            cbSuccess: (response) => {
-                console.log(response.data);
-            },
-            cbError: (error) => {
-                console.log(error);
-            },
-            cbFinally: null
-        });
+        login(type, data, () => {
+            router.push("/");
+        })(dispatch, state);
     }
 
     const inputHandler = (event) => {

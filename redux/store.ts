@@ -4,10 +4,11 @@ import { useMemo } from "react";
 import thunk from "redux-thunk";
 import userDetails from "./modules/userDetails";
 import hoverMenu from "./modules/hoverMenu";
+import login from "./modules/login";
 
 let store;
 
-const rootReducer = combineReducers({ userDetails,hoverMenu });
+const rootReducer = combineReducers({ userDetails, hoverMenu, login });
 const composeEnhancers =
   process.env.NEXT_PUBLIC_ENV === "development" ? composeWithDevTools : compose;
 
