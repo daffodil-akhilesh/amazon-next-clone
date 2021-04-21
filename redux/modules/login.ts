@@ -8,19 +8,31 @@ export const SAVE_TOKEN = "amazon/login/SAVE_TOKEN";
 export const REMOVE_TOKEN = "amazon/login/REMOVE_TOKEN";
 
 
+
 const initialState = {
     isLogin: false
 }
 
-const saveToken = (data) => {
+export const saveToken = (data) => {
     return {
         type: SAVE_TOKEN,
         data
     }
 }
-const removeToken = () => {
+export const removeToken = () => {
     return {
         type: REMOVE_TOKEN
+    }
+}
+
+export const autoLogin = () => {
+    const email = localStorage.getItem("USER_EMAIL");
+    const idToken = localStorage.getItem("USER_TOKEN");
+    const localId = localStorage.getItem("USER_ID");
+    const data = { email, idToken, localId };
+    // get new expiration time
+    return (dispatch) => {
+        dispatch(setUserDetails(data));
     }
 }
 
@@ -40,7 +52,8 @@ export const login = (type, data, cb) => {
                 dispatch(setUserDetails(response.data));
                 dispatch(saveToken(response.data));
                 setTimeout(() => {
-                    dispatch(removeToken())
+                    dispatch(removeToken());
+                    logout()(dispatch);
                 }, +response.data.expiresIn * 1000)
                 dispatch({
                     type: END_LOGIN

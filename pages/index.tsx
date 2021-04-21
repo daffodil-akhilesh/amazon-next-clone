@@ -5,6 +5,9 @@ import classes from "../styles/index.module.css";
 import Grid from "../components/Grid/Grid";
 import UserProfile from "../components/UserProfile/UserProfile";
 import ProductSlider from '../components/ProductSlider/ProductSlider';
+import { autoLogin } from "../redux/modules/login";
+import { useEffect } from 'react';
+import { useDispatch } from "react-redux";
 
 
 let products = [
@@ -22,6 +25,10 @@ let products = [
 ]
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    autoLogin()(dispatch);
+  }, [])
   return (
     <Layout>
       <TopBar />
