@@ -4,7 +4,8 @@ import HoverMenuLink from "./HoverMenuLink/HoverMenuLink";
 import HoverMenuPage from "./HoverMenuPage/HoverMenuPage";
 import HoverMenuButton from './HoverMenuButton/HoverMenuButtom';
 import { useRouter } from "next/router";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../redux/modules/login';
 
 let isLoggedIn = false;
 
@@ -47,11 +48,15 @@ let data2 = [
 
 const HoverMenu = ({ type }) => {
     const router = useRouter();
+    const dispatch = useDispatch();
     const userDetails = useSelector((state) => {
         return state.userDetails;
     })
-    const onClick = () => {
+    const goToLogin = () => {
         router.push("/auth/login");
+    }
+    const logOut = () => {
+        logout()(dispatch);
     }
     return (
         <div className={classes.HoverMenu}>
@@ -67,7 +72,7 @@ const HoverMenu = ({ type }) => {
                 type === "DoubleTextAcc" && (
                     <div>
                         {
-                            <HoverMenuButton showPara={!userDetails.userToken} link={"/auth/signUp"} text={!userDetails.userToken ? "Sign In" : "Log Out"} onClick={!userDetails.userToken ? onClick : null} />
+                            <HoverMenuButton showPara={!userDetails.userToken} link={"/auth/signUp"} text={!userDetails.userToken ? "Sign In" : "Log Out"} onClick={!userDetails.userToken ? goToLogin : logOut} />
                         }
                         <hr />
                         <div className={[classes.HoverMenuContent, classes.DisplayFlexRow].join(" ")}>

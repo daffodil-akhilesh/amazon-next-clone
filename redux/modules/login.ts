@@ -1,6 +1,6 @@
 import call from '../../api';
 import endpoints from '../../api/apiEndpoints';
-import { setUserDetails } from './userDetails';
+import { setUserDetails, resetUser } from './userDetails';
 
 export const START_LOGIN = "amazon/login/START_LOGIN";
 export const END_LOGIN = "amazon/login/END_LOGIN";
@@ -57,6 +57,14 @@ export const login = (type, data, cb) => {
         });
     }
 }
+export const logout = () => {
+    return (dispatch) => {
+        localStorage.removeItem("USER_TOKEN");
+        localStorage.removeItem("USER_ID");
+        localStorage.removeItem("USER_EMAIL");
+        dispatch(resetUser());
+    }
+}
 
 const getReducer = {
     [START_LOGIN]: (state, action) => {
@@ -82,7 +90,7 @@ const getReducer = {
         localStorage.removeItem("USER_ID");
         localStorage.removeItem("USER_EMAIL");
         return state;
-    }
+    },
 };
 
 const reducer = (state = initialState, action) => {
