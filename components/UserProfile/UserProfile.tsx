@@ -5,13 +5,13 @@ import { PropsWithChildren } from "react";
 import { getUserName } from "../../utils";
 
 interface Props extends PropsWithChildren<any> {
-    width: number,
-    height: number,
+    width: string,
+    height: string,
     children?: Array<object>
 }
 const defaultProps: Props = {
-    width: 200,
-    height: 600
+    width: "200px",
+    height: "600px"
 }
 
 const UserProfile: React.FC<Props> = ({ width, height, children }) => {
@@ -22,7 +22,7 @@ const UserProfile: React.FC<Props> = ({ width, height, children }) => {
 
     return (
         <div className={classes.UserProfile}>
-            <LoginPagePostCard width={width} height={height} imagePath={"/profile.png"} imgH={140} imgW={140} imgHref={"/user/profile"}>
+            <LoginPagePostCard width={width} height={height} imagePath={"/profile.png"} imgH={"140px"} imgW={"140px"} imgHref={"/user/profile"}>
                 <hr style={{ width: "90%", opacity: "0.27" }} />
                 <div>
                     <div className={classes.ProfileName}>

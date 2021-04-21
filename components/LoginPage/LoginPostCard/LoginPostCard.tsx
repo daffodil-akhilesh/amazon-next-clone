@@ -6,7 +6,7 @@ import React, { PropsWithChildren } from "react";
 interface LoginPostCardProps extends PropsWithChildren<any> {
     width: string,
     height: string,
-    children?: Array<object>,
+    children?: Array<object> | JSX.Element,
     imagePath?: string,
     imgH: string,
     imgW: string,

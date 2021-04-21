@@ -27,3 +27,12 @@
 .SelectedProductsContainer{
   height:350px; 
 }
+.UserProfileItems{
+  display: flex;
+  align-items: center;
+  height:max-content;
+  margin-bottom: 10px;
+}
+.UserProfileItems>div{
+  flex:50%;
+}
